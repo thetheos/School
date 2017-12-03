@@ -4,6 +4,10 @@
 \usepackage{empheq}
 \usepackage{graphicx}
 \usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage{systeme}
+
+\setcounter{secnumdepth}{4}
 
 \title{Physique Oscillation Harmonique}
 \author{Vanden Driessche Théo}
@@ -63,6 +67,7 @@ $y_{(t)} = CP = QM = CM \cdot sin(\alpha) = A \cdot sin(\omega t)$
  %   y_{(t)} =A\cdot sin(\alpha _{(t)}) = A\cdot sin(\omega t)    \\
   %  \omega = 2\pi f = \dfrac{2\pi}{T}
 %\end{gather}
+
 \begin{center}
     \includegraphics[scale=0.5]{Fig1_8.png}
 \end{center}
@@ -71,7 +76,7 @@ $y_{(t)} = CP = QM = CM \cdot sin(\alpha) = A \cdot sin(\omega t)$
 
 \begin{empheq}[left=\empheqlbrace]{align}
 \sum F & =ma \\
- a & = -\omega ^2 y 
+ a & = -\omega^2 y 
 \end{empheq}
 \begin{align*}
 \Rightarrow \sum F & = -m\omega ^2 y \\
@@ -130,7 +135,6 @@ Nous pouvons donc dire:
 \end{split}
 \end{equation}
 
-\newpage
 
 \begin{equation}
 \begin{split}
@@ -139,7 +143,7 @@ Nous pouvons donc dire:
 \end{equation}
 $$\theta_{(t)}'' + \dfrac{g}{L} \theta_{(t)} = 0$$ \\
 Une solution de cette équation différentielle, où l'on suppose que $\omega^2 = \dfrac{g}{L}$,  est: \\
-$$\theta_{(t)} = \theta_{max} sin(\omega t + \phi)$$\\
+$$\theta_{(t)} = \theta_{max} sin(\omega t + \varphi)$$\\
 \begin{align*}
     \omega^2 & = \dfrac{g}{L} 
     & \omega = \sqrt{\dfrac{g}{L}}&
@@ -152,10 +156,10 @@ $$\theta_{(t)} = \theta_{max} sin(\omega t + \phi)$$\\
 \subsubsection{Énergie cinétique}
 \begin{equation}
 \begin{split}
-    E_{cin}  = \dfrac{mv^2}{2} & = \dfrac{m\Big(\omega A \cdot cos(\omega t+ \phi)\Big)^2}{2} \\
-    & =\dfrac{ m\omega^2 A^2 cos^2(\omega t+ \phi)}{2} \text{ Par l'égalité fondamentale: } \\
-    & = \dfrac{ m\omega^2 A^2 \Big(1-sin^2(\omega t+ \phi)\Big)}{2} \\
-    & =\dfrac{m\omega^2\Big(A^2-A^2sin^2(\omega t+ \phi)\Big)}{2} \\
+    E_{cin}  = \dfrac{mv^2}{2} & = \dfrac{m\Big(\omega A \cdot cos(\omega t+ \varphi)\Big)^2}{2} \\
+    & =\dfrac{ m\omega^2 A^2 cos^2(\omega t+ \varphi)}{2} \text{ Par l'égalité fondamentale: } \\
+    & = \dfrac{ m\omega^2 A^2 \Big(1-sin^2(\omega t+ \varphi)\Big)}{2} \\
+    & =\dfrac{m\omega^2\Big(A^2-A^2sin^2(\omega t+ \varphi)\Big)}{2} \\
     & =\dfrac{m\omega^2(A^2-y_{(t)}^2)}{2} \\
     & = \dfrac{k(A^2-y_{(t)}^2)}{2}
 \end{split}
@@ -179,4 +183,172 @@ Par définition, $E_{pot} = E_{tot}-E_{cin}$ \\
     \end{split}
 \end{equation}
 
+\subsection{Oscillations amorties}
+Il existe des forces dissipatives, $E_{mec}$ n'est pas conservée. Ceci entraine une diminution de l'Amplitude (A) au fil du temps (t).\\
+En general, $F_{dissip}=\gamma \cdot v$ où $\gamma$ est une constante d'amortissement.
+\section{Résonance}
+\subsection{Définitions}
+\begin{itemize}
+    \item lorsque le transfet d'énergie est maximum, on dit qu'il y a résonance.
+\end{itemize}
+\subsection{Conclusions}
+\begin{enumerate}
+    \item Il y a résonance lorsque la fréquence propre du résonateur est égale à la fréquence propre de l'excitateur
+    \item Le transfert d'énergie a donc un caractère sélectif: le résonateur absorbe de façon préférentielle à sa fréquence propre.
+\end{enumerate}
+\subsection{Application mathématique}
+\begin{equation}
+    k= \dfrac{F_p}{x}=\dfrac{m\cdot g}{x}
+\end{equation}
+
+\section{Ondes progressives}
+\subsection{Définition}
+Transfert d'énérgie sans transfert de matère.
+\subsection{Types}
+\begin{itemize}
+    \item Ondes transversales
+    \item Ondes longitudinales
+\end{itemize}
+\subsection{Vitesse}
+Dépend du milieu et de la nature du signal
+\subsection{Ondes sinusoïdales entretenues}
+\subsubsection{Longueur d'onde}
+\begin{equation}
+    \lambda = v \cdot T = \dfrac{v}{f}
+\end{equation}
+Distance minimale entre 2 points en concordance de phase.
+\subsubsection{Études mathématiques}
+Prenons l'équation en fonction du temps de l'élongation de S (la source) et supposons que $\varphi = 0$
+\begin{equation}
+    y_{S(t)}= A \cdot sin(\omega t)
+\end{equation}
+
+\begin{center}
+    \includegraphics{EtudeMathOndeSinusProg.png}
+\end{center}
+P fait la même chose que S avec avec un retard qui correspond au temps mis pour arriver à P.
+\begin{equation}
+    \begin{split}
+        y_{P(t)} & = A \cdot sin(\omega t + \phi) \\
+        &= A \cdot sin(\omega (t-t')) \text{ où } t' = \dfrac{d}{v}\\
+        &= A\cdot sin\Big(\omega t - \omega \dfrac{d}{v}\Big)\\
+        &= A \cdot sin\Big(\omega t - \dfrac{2\pi}{T}\cdot \dfrac{d}{v}\Big) \\
+        &= A \cdot sin\Big(\omega t - \dfrac{2\pi d}{\lambda}\Big) \text{ valable pour } t > t'
+    \end{split}
+\end{equation}
+Conditions pour que P et S vibrent en concodrance de phase.
+\begin{equation}
+    \begin{split}
+        y_{S(t)} &= y_{P(t)}  \text{ et même v}\\
+        A\cdot sin(\omega t) &= A\cdot sin\Big(\omega t - \dfrac{2\pi d}{\lambda}\Big)\\
+         sin(\omega t) &= sin\Big(\omega t - \dfrac{2\pi d}{\lambda}\Big)\\
+         \omega t &= \omega t - \dfrac{2\pi d}{\lambda} + k2\pi \\
+         0 &=  - \dfrac{2\pi d}{\lambda} + k2\pi \\
+         k2\pi &= \dfrac{2\pi d}{\lambda} \\
+         k\cdot \lambda& = d \text{  } k \in \mathbb{N}
+    \end{split}
+\end{equation}
+Conditions pour que S et P soient en oppositions de phase.
+\begin{equation}
+    \begin{split}
+        y_{S(t)} &= -y_{P(t)}\\
+        A\cdot sin(\omega t) &= -A \cdot sin\Big(\omega t - \dfrac{2\pi d}{\lambda}\Big)\\
+        \omega t &= \omega t - \dfrac{2\pi d}{\lambda} + \pi + k2\pi\\
+        \dfrac{2\pi d}{\lambda}& = \pi + k2\pi\\
+        \dfrac{2 d}{\lambda}& = 1+2k\\
+        d&= (2k+1)\cdot \dfrac{\lambda}{2} \text{ } k \in \mathbb{N}\\
+    \end{split}
+\end{equation}
+
+\subsubsection{Vitesses des ondes progressives le long d'une corde}
+Dans un référentiel qui se déplace avec l'onde, c'est la corde qui se déplace vers la gauche.
+\begin{center}
+\includegraphics[scale = 0.75]{vitesseOndeProgCord.png}\\
+\end{center}
+Un petit segment de corde $\Delta S$ peut être assimilé à un arc de cercle.
+\begin{equation}
+    \Delta S = R(2 \theta)
+\end{equation}
+Si $\mu$ est la densité de masse linéique (la masse par mètre (kg/m)), la masse du segment est:
+\begin{equation}
+    m=\mu \Delta S= \mu R(2\theta)
+\end{equation}
+La tension de la corde doit fournir la force centripète nécessaire au mouvement circulaire.
+\begin{equation}
+    \begin{split}
+        2F_T \cdot sin(\theta) &= \dfrac{mv^2}{R}
+    \end{split}
+\end{equation}
+Si l'amplitude de la déformation est petite, $sin(\theta)\cong \theta$, alors,
+\begin{equation}
+    \begin{split}
+        2F_T \cdot sin(\theta) &=  2\mu R \theta \cdot \dfrac{v^2}{R}\\
+        v &= \sqrt{\dfrac{F_T}{\mu}}
+    \end{split}
+\end{equation}
+
+\section{Propagation des ondes à deux dimensions}
+\subsection{Propagation sans obstacles}
+\subsubsection{Observations}
+\begin{enumerate}
+    \item Ondes circulaires\\
+    En chacun des points, la direction de propagation de ces ondes circulaires est radiale, c'est-à-dire perpendiculaire aux circonférences.\\
+    L'amplitude diminue en fonction du temps. Au plus le temps s'écoule, le diametre du cercle augmente donc le périmètre augmente. L'énergie est donc répartie sur toute la longeur du périmètre.
+    \includegraphics[scale = 0.1]{OndesCirculairesPropag.png}
+    \item Ondes planes\\
+    La direction de propagation est perpendiculaire aux crêtes.
+    \item Conclusion.\\
+    Les ondes se propagent en ligne droite.
+\end{enumerate}
+\subsubsection{Principe de Huygens}
+Tout point atteint par une onde se comporte comme une source d'ondes, c'est-à-dire génère des ondes élémentaires circulaires de même fréquences.
+\begin{itemize}
+    \item Le principe de Huygens permet donc de prévoir qu'une onde circulaire va se propager en restant une onde circulaire.
+    \item Le principe de Huygens permet donc de prévoir qu'une onde plane se propage en restant une onde plane.
+\end{itemize}
+\subsection{Réflexion des ondes}
+\subsubsection{Observations}
+\begin{enumerate}
+    \item Ondes circulaires\\
+    Voir illustrations 4.7 p.49
+    \item Ondes planes\\
+    Voir illustrations 4.8 p.50
+\end{enumerate}
+\subsection{Réfraction des ondes}
+Les ondes ne se propagent pas à la même vitesse dans des milieux différents.
+\subsubsection{Explications théoriques}
+\includegraphics[scale=0.5]{DemonstrationRefraction.png}\\
+\begin{align}
+    \systeme*{sin\alpha_1 &= \dfrac{\lambda_1}{hyp},sin\alpha_2 &= \dfrac{\lambda_2}{hyp}}\Longrightarrow
+    \dfrac{sin\alpha_1}{sin\alpha_2} = \dfrac{\lambda_1}{\lambda_2} =\dfrac{v_1\cdot T}{v_2\cdot T} =\dfrac{v_1}{v_2}
+\end{align}
+
+\subsection{Diffraction des ondes}
+\subsubsection{Observations}
+L'orsque l'écart = la longeur d'onde. L'onde se réfracte.\\
+Au plus on réduit la distance, au plus la difraction est forte.
+\subsubsection{Synthèse}
+\includegraphics[scale=0.1]{DiffractionOndes.png}\\
+
+La diffraction des ondes est leur déviation dans plusieurs directions par des obstacles: elles sont déviées de leur direction initiale.\\
+Elles ne se propagent plus en ligne droite.\\
+Lorsque que la longeur d'onde est infieure à la largeur de l'obstacle. Il n'y a pas de phénomène de diffraction. L'onde continue en ligne droite.\\
+Lorsque la longeur d'onde se rapproche de la largeur de l'obstacle, il y a de plus en plus un phénomène de réfraction.\\
+Lorsque la longeur d'onde est égale ou supérieur à la largeur de l'obstacle, il y a beaucoup de diffraction.
+
+
+\section{Superposition d'ondes}
+\subsection{Principes de superposition}
+Les différentes ondes ne changent pas. Elles ne s'altèrent pas entre elles.
+\subsubsection{Conclusion}
+L'élongation en un point, à un instant donné, est la somme algébrique des élongations en ce point de chacune de ces pertubations à cet instant.\\
+\begin{align}
+    y(t)&=y_1(t)+y_2(t)\\
+    y&=\sum y_i
+\end{align}
+Après la rencontre, les perturbations continuent à se propager indépendamment l'une de l'autre dans leur sens initial.
+\subsection{Modes stationnaires d'oscillation}
+\subsubsection{Etude graphique}
+Endroits où les ondes sont toujours en opposition de phase: noeud\\
+Nedroits où les ondes sont toujours en concordance de phase: ventre
 \end{document}
